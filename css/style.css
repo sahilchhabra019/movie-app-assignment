@@ -73,8 +73,7 @@
 }
 .movie__title{
     width:90%;
-    font-size:20px;
-    font-weight:500;
+    min-height:50px;
 }
 .movie__fav--heart{
     width:10%;

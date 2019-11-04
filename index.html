@@ -6,6 +6,7 @@
     <meta name="author" content="Sahil Chhabra">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/style.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900,900i&display=swap" rel="stylesheet">
     <title>Movies List App</title>
 </head>
@@ -21,6 +22,7 @@
                         </li>
                         <li class="menu__item"><a href="JavaScript:Void(0);" tabindex="2" class="menu--link">Explore</a>
                         </li>
+
                     </ul>
                 </nav>
             </section>
@@ -30,134 +32,40 @@
         <section class="latest__movies">
             <div class="container">
                 <h2 class="primary-text">Latest</h2>
-                <div class="movies__listing">
-                    <article class="movie__card">
-                        <figure class="movie__image" id="modal">
-                            <img src="http://placehold.jp/190x190.png" alt="" title="">
-                        </figure>
-                        <div class="movie__descripton">
-                            <section class="movie__detials">
-                                <div class="movie__title">
-                                    <h2>Movie 1</h2>
-                                </div>
-                                <div class="movie__fav--heart">
-                                    <span><i class="fa fa-heart" aria-hidden="true"></i></span>
-                                </div>
-                            </section>
-                            <section class="movie__generes">
-                                <ul>
-                                    <li>action</li>
-                                    <li>Adventure</li>
-                                </ul>
-                            </section>
-                            <section class="movie__rating ">
-                                <div class="movie__ratingStars">
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                </div>
-                                <a href="movie-details.html" class="movie__showMore">Show More</a>
-                            </section>
-                        </div>
-                    </article>
-
-                    <article class="movie__card">
-                        <figure class="movie__image" id="modal">
-                            <img src="http://placehold.jp/190x190.png" alt="" title="">
-                        </figure>
-                        <div class="movie__descripton">
-                            <section class="movie__detials">
-                                <div class="movie__title">
-                                    <h2>Movie 1</h2>
-                                </div>
-                                <div class="movie__fav--heart">
-                                    <span><i class="fa fa-heart" aria-hidden="true"></i></span>
-                                </div>
-                            </section>
-                            <section class="movie__generes">
-                                <ul>
-                                    <li>action</li>
-                                    <li>Adventure</li>
-                                </ul>
-                            </section>
-                            <section class="movie__rating ">
-                                <div class="movie__ratingStars">
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                </div>
-                                <a href="movie-details.html" class="movie__showMore">Show More</a>
-                            </section>
-                        </div>
-                    </article>
-
-                    <article class="movie__card">
-                        <figure class="movie__image" id="modal">
-                            <img src="http://placehold.jp/190x190.png" alt="" title="">
-                        </figure>
-                        <div class="movie__descripton">
-                            <section class="movie__detials">
-                                <div class="movie__title">
-                                    <h2>Movie 1</h2>
-                                </div>
-                                <div class="movie__fav--heart">
-                                    <span><i class="fa fa-heart" aria-hidden="true"></i></span>
-                                </div>
-                            </section>
-                            <section class="movie__generes">
-                                <ul>
-                                    <li>action</li>
-                                    <li>Adventure</li>
-                                </ul>
-                            </section>
-                            <section class="movie__rating ">
-                                <div class="movie__ratingStars">
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                </div>
-                                <a href="javascript:;" class="movie__showMore">Show More</a>
-                            </section>
-                        </div>
-                    </article>
-
-                    <article class="movie__card">
-                        <figure class="movie__image" id="modal">
-                            <img src="http://placehold.jp/190x190.png" alt="" title="">
-                        </figure>
-                        <div class="movie__descripton">
-                            <section class="movie__detials">
-                                <div class="movie__title">
-                                    <h2>Movie 1</h2>
-                                </div>
-                                <div class="movie__fav--heart">
-                                    <span><i class="fa fa-heart" aria-hidden="true"></i></span>
-                                </div>
-                            </section>
-                            <section class="movie__generes">
-                                <ul>
-                                    <li>action</li>
-                                    <li>Adventure</li>
-                                </ul>
-                            </section>
-                            <section class="movie__rating ">
-                                <div class="movie__ratingStars">
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                </div>
-                                <a href="javascript:;" class="movie__showMore">Show More</a>
-                            </section>
-                        </div>
-                    </article>
+                <div class="movies__listing" id="movies__listing">
+                        <template id="latest-movies">
+                                <article class="movie__card">
+                                        <figure class="movie__image" id="modal">
+                                            <img src="" alt="" title="">
+                                        </figure>
+                                        <div class="movie__descripton">
+                                            <section class="movie__detials">
+                                                <div class="movie__title">
+                                                    <h2 class="secondary-text"></h2>
+                                                </div>
+                                                <div class="movie__fav--heart" id="movie__fav--heart">
+                                                    <span><i class="fa fa-heart" aria-hidden="true"></i></span>
+                                                </div>
+                                            </section>
+                                            <section class="movie__generes">
+                                                <ul>
+                                                    
+                                                  <li></li>
+                                                </ul>
+                                            </section>
+                                            <section class="movie__rating ">
+                                                <div class="movie__ratingStars">
+                                                    <span class="fa fa-star checked"></span>
+                                                    <span class="fa fa-star checked"></span>
+                                                    <span class="fa fa-star checked"></span>
+                                                    <span class="fa fa-star"></span>
+                                                    <span class="fa fa-star"></span>
+                                                </div>
+                                                <a href="movie-details.html" class="movie__showMore">Show More</a>
+                                            </section>
+                                        </div>
+                                </article>
+                        </template>
                 </div>
             </div>
         </section>
@@ -512,8 +420,41 @@
             </section>
         </article>
     </div>
+
+
+
+
+   
+    <script>
+        // Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("modal");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("modal__close")[0];
+
+// When the user clicks the button, open the modal
+btn.onclick = function () {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function () {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+    </script>
     <ul id="movies"></ul>
-<script src="js/api.js"></script>
+<script src="js/latest-movies.js" type="module"></script>
+<script src="js/index.js"></script>
 </body>
 
 </html>

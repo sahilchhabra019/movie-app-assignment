@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900,900i&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/1790f29147.js" crossorigin="anonymous"></script>
     <title>Movies List App</title>
-</head>     
+</head>
 
 <body>
     <main class="movies">
@@ -27,215 +27,211 @@
                 </nav>
             </section>
         </header>
+        <div id="main-details">
+        <template id="details">
+            <div>
+                <section class="full__banner">
+                    <figure>
+                        <img src="images/poster-img.jpg" alt="bahuballi" title="" class="movie__poster">
+                    </figure>
+                </section>
 
-        <section class="full__banner">
-            <figure>
-                <img src="images/poster-img.jpg" alt="bahuballi" title="" class="movie__poster">
-            </figure>
-        </section>
-
-        <section class="movie__details">
-            <div class="container movie__layout">
-                <article class="movie__desc">
-                    <h2 class="primary-text">Bahuballi</h2>
-                    <p class="para-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        Lorem Ipsum has
-                        been
-                        the industry's standard dummy text ever since the 1500s, when an unknown printer took a
-                        galley
-                        of type and scrambled it to make a type specimen book. It has survived not only five
-                        centuries,
-                        but also the leap into electronic typesetting, remaining essentially unchanged. It was
-                        popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
-                        passages,
-                        and more recently with desktop publishing software like Aldus PageMaker including versions
-                        of
-                        Lorem Ipsum.
-                    </p>
-                </article>
-                <aside class="movie__info">
-                    <table class="table">
-                        <tbody class="table__body">
-                            <tr>
-                                <th>
-                                    genre
-                                </th>
-                                <td>
-                                    Action,Adventure
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>
-                                    Cast
-                                </th>
-                                <td>
-                                    prabhas,tamama,anushka shetty
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>
-                                    Director
-                                </th>
-                                <td>
-                                    S.S Rajmouli
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>
-                                    Movie Rating
-                                </th>
-                                <td>
-                                    <div class="movie__ratingStars">
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star"></span>
-                                        <span class="fa fa-star"></span>
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </aside>
+                <section class="movie__details">
+                    <div class="container movie__layout">
+                        <article class="movie__desc">
+                            <h2 class="primary-text">Bahuballi</h2>
+                            <p class="para-text">
+                                
+                            </p>
+                        </article>
+                        <aside class="movie__info">
+                            <table class="table">
+                                <tbody class="table__body">
+                                    <tr>
+                                        <th>
+                                            genre
+                                        </th>
+                                        <td>
+                                            Action,Adventure
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            Cast
+                                        </th>
+                                        <td>
+                                            prabhas,tamama,anushka shetty
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            Director
+                                        </th>
+                                        <td>
+                                            S.S Rajmouli
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            Movie Rating
+                                        </th>
+                                        <td>
+                                            <div class="movie__ratingStars">
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star"></span>
+                                                <span class="fa fa-star"></span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </aside>
+                    </div>
+                </section>
             </div>
-        </section>
+        </template>
+        </div>
 
         <section class="related__movies">
 
-                        <div class="container">
-                            <h2 class="primary-text">Related Movies</h2>
-                            <div class="movies__listing">
-                                <article class="movie__card">
-                                    <figure class="movie__image" id="modal">
-                                        <img src="http://placehold.jp/190x190.png" alt="" title="">
-                                    </figure>
-                                    <div class="movie__descripton">
-                                        <section class="movie__detials">
-                                            <div class="movie__title">
-                                                <h2>Movie 1</h2>
-                                            </div>
-                                            <div class="movie__fav--heart">
-                                                <span><i class="fa fa-heart" aria-hidden="true"></i></span>
-                                            </div>
-                                        </section>
-                                        <section class="movie__generes">
-                                            <ul>
-                                                <li>action</li>
-                                                <li>Adventure</li>
-                                            </ul>
-                                        </section>
-                                        <section class="movie__rating ">
-                                            <div class="movie__ratingStars">
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star"></span>
-                                                <span class="fa fa-star"></span>
-                                            </div>
-                                            <a href="javascript:;" class="movie__showMore">Show More</a>
-                                        </section>
-                                    </div>
-                                </article>
-            
-                                <article class="movie__card">
-                                    <figure class="movie__image" id="modal">
-                                        <img src="http://placehold.jp/190x190.png" alt="" title="">
-                                    </figure>
-                                    <div class="movie__descripton">
-                                        <section class="movie__detials">
-                                            <div class="movie__title">
-                                                <h2>Movie 1</h2>
-                                            </div>
-                                            <div class="movie__fav--heart">
-                                                <span><i class="fa fa-heart" aria-hidden="true"></i></span>
-                                            </div>
-                                        </section>
-                                        <section class="movie__generes">
-                                            <ul>
-                                                <li>action</li>
-                                                <li>Adventure</li>
-                                            </ul>
-                                        </section>
-                                        <section class="movie__rating ">
-                                            <div class="movie__ratingStars">
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star"></span>
-                                                <span class="fa fa-star"></span>
-                                            </div>
-                                            <a href="javascript:;" class="movie__showMore">Show More</a>
-                                        </section>
-                                    </div>
-                                </article>
-            
-                                <article class="movie__card">
-                                    <figure class="movie__image" id="modal">
-                                        <img src="http://placehold.jp/190x190.png" alt="" title="">
-                                    </figure>
-                                    <div class="movie__descripton">
-                                        <section class="movie__detials">
-                                            <div class="movie__title">
-                                                <h2>Movie 1</h2>
-                                            </div>
-                                            <div class="movie__fav--heart">
-                                                <span><i class="fa fa-heart" aria-hidden="true"></i></span>
-                                            </div>
-                                        </section>
-                                        <section class="movie__generes">
-                                            <ul>
-                                                <li>action</li>
-                                                <li>Adventure</li>
-                                            </ul>
-                                        </section>
-                                        <section class="movie__rating ">
-                                            <div class="movie__ratingStars">
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star"></span>
-                                                <span class="fa fa-star"></span>
-                                            </div>
-                                            <a href="javascript:;" class="movie__showMore">Show More</a>
-                                        </section>
-                                    </div>
-                                </article>
-            
-                                <article class="movie__card">
-                                    <figure class="movie__image" id="modal">
-                                        <img src="http://placehold.jp/190x190.png" alt="" title="">
-                                    </figure>
-                                    <div class="movie__descripton">
-                                        <section class="movie__detials">
-                                            <div class="movie__title">
-                                                <h2>Movie 1</h2>
-                                            </div>
-                                            <div class="movie__fav--heart">
-                                                <span><i class="fa fa-heart" aria-hidden="true"></i></span>
-                                            </div>
-                                        </section>
-                                        <section class="movie__generes">
-                                            <ul>
-                                                <li>action</li>
-                                                <li>Adventure</li>
-                                            </ul>
-                                        </section>
-                                        <section class="movie__rating ">
-                                            <div class="movie__ratingStars">
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star"></span>
-                                                <span class="fa fa-star"></span>
-                                            </div>
-                                            <a href="javascript:;" class="movie__showMore">Show More</a>
-                                        </section>
-                                    </div>
-                                </article>
-                            </div>
+            <div class="container">
+                <h2 class="primary-text">Related Movies</h2>
+                <div class="movies__listing">
+                    <article class="movie__card">
+                        <figure class="movie__image" id="modal">
+                            <img src="http://placehold.jp/190x190.png" alt="" title="">
+                        </figure>
+                        <div class="movie__descripton">
+                            <section class="movie__detials">
+                                <div class="movie__title">
+                                    <h2>Movie 1</h2>
+                                </div>
+                                <div class="movie__fav--heart">
+                                    <span><i class="fa fa-heart" aria-hidden="true"></i></span>
+                                </div>
+                            </section>
+                            <section class="movie__generes">
+                                <ul>
+                                    <li>action</li>
+                                    <li>Adventure</li>
+                                </ul>
+                            </section>
+                            <section class="movie__rating ">
+                                <div class="movie__ratingStars">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                </div>
+                                <a href="javascript:;" class="movie__showMore">Show More</a>
+                            </section>
                         </div>
-                    </section>
+                    </article>
+
+                    <article class="movie__card">
+                        <figure class="movie__image" id="modal">
+                            <img src="http://placehold.jp/190x190.png" alt="" title="">
+                        </figure>
+                        <div class="movie__descripton">
+                            <section class="movie__detials">
+                                <div class="movie__title">
+                                    <h2>Movie 1</h2>
+                                </div>
+                                <div class="movie__fav--heart">
+                                    <span><i class="fa fa-heart" aria-hidden="true"></i></span>
+                                </div>
+                            </section>
+                            <section class="movie__generes">
+                                <ul>
+                                    <li>action</li>
+                                    <li>Adventure</li>
+                                </ul>
+                            </section>
+                            <section class="movie__rating ">
+                                <div class="movie__ratingStars">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                </div>
+                                <a href="javascript:;" class="movie__showMore">Show More</a>
+                            </section>
+                        </div>
+                    </article>
+
+                    <article class="movie__card">
+                        <figure class="movie__image" id="modal">
+                            <img src="http://placehold.jp/190x190.png" alt="" title="">
+                        </figure>
+                        <div class="movie__descripton">
+                            <section class="movie__detials">
+                                <div class="movie__title">
+                                    <h2>Movie 1</h2>
+                                </div>
+                                <div class="movie__fav--heart">
+                                    <span><i class="fa fa-heart" aria-hidden="true"></i></span>
+                                </div>
+                            </section>
+                            <section class="movie__generes">
+                                <ul>
+                                    <li>action</li>
+                                    <li>Adventure</li>
+                                </ul>
+                            </section>
+                            <section class="movie__rating ">
+                                <div class="movie__ratingStars">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                </div>
+                                <a href="javascript:;" class="movie__showMore">Show More</a>
+                            </section>
+                        </div>
+                    </article>
+
+                    <article class="movie__card">
+                        <figure class="movie__image" id="modal">
+                            <img src="http://placehold.jp/190x190.png" alt="" title="">
+                        </figure>
+                        <div class="movie__descripton">
+                            <section class="movie__detials">
+                                <div class="movie__title">
+                                    <h2>Movie 1</h2>
+                                </div>
+                                <div class="movie__fav--heart">
+                                    <span><i class="fa fa-heart" aria-hidden="true"></i></span>
+                                </div>
+                            </section>
+                            <section class="movie__generes">
+                                <ul>
+                                    <li>action</li>
+                                    <li>Adventure</li>
+                                </ul>
+                            </section>
+                            <section class="movie__rating ">
+                                <div class="movie__ratingStars">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                </div>
+                                <a href="javascript:;" class="movie__showMore">Show More</a>
+                            </section>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
 
 </body>
+<script src="js/movie-details.js" type="module"></script>
 
 </html>

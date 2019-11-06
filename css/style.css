@@ -217,10 +217,13 @@
 }
 .movie__info .table td {
     margin-left: 75px;
+    width: 75%;
+    line-height: 1.8;
 }
 .movie__info .table th {
-    font-size:18px;
-    text-transform:capitalize;
+    font-size: 18px;
+    text-transform: capitalize;
+    width: 25%;
 }
 .movie__desc .primary-text{
     margin-bottom:10px;

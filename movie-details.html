@@ -8,12 +8,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900,900i&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/1790f29147.js" crossorigin="anonymous"></script>
-    <title>Movies List App</title>
+    <title>Movies Detail Page</title>
 </head>
 
 <body>
     <main class="movies">
+
         <header class="menu">
             <section class="container-fluid">
                 <nav class="primary__navigation">
@@ -27,69 +27,71 @@
                 </nav>
             </section>
         </header>
-        <div id="main-details">
-        <template id="details">
-            <div>
-                <section class="full__banner">
-                    <figure>
-                        <img src="" alt="" title="" class="movie__poster">
-                    </figure>
-                </section>
 
-                <section class="movie__details">
-                    <div class="container movie__layout">
-                        <article class="movie__desc">
-                            <h2 class="primary-text"></h2>
-                            <p class="para-text"></p>
-                        </article>
-                        <aside class="movie__info">
-                            <table class="table">
-                                <tbody class="table__body">
-                                    <tr class="genre__data">
-                                        <th>
-                                            genre
-                                        </th>
-                                        <td>
-                                            
-                                        </td>
-                                    </tr>
-                                    <tr class="cast__data">
-                                        <th>
-                                            Cast
-                                        </th>
-                                        <td>
-                                            
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th>
-                                            Director
-                                        </th>
-                                        <td>
-                                            S.S Rajmouli
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th>
-                                            Movie Rating
-                                        </th>
-                                        <td>
-                                            <div class="movie__ratingStars">
-                                                <span></span>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </aside>
-                    </div>
-                </section>
-            </div>
-        </template>
+        <!-- Universal template for single movie description -->
+        <div id="main-details">
+            <template id="details">
+                <div>
+                    <section class="full__banner">
+                        <figure>
+                            <img src="" alt="" title="" class="movie__poster">
+                        </figure>
+                    </section>
+
+                    <section class="movie__details">
+                        <div class="container movie__layout">
+                            <article class="movie__desc">
+                                <h2 class="primary-text"></h2>
+                                <p class="para-text"></p>
+                            </article>
+                            <aside class="movie__info">
+                                <table class="table">
+                                    <tbody class="table__body">
+                                        <tr class="genre__data">
+                                            <th>
+                                                genre
+                                            </th>
+                                            <td>
+
+                                            </td>
+                                        </tr>
+                                        <tr class="cast__data">
+                                            <th>
+                                                Cast
+                                            </th>
+                                            <td>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                Director
+                                            </th>
+                                            <td>
+                                                S.S Rajmouli
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                Movie Rating
+                                            </th>
+                                            <td>
+                                                <div class="movie__ratingStars">
+                                                    <span></span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </aside>
+                        </div>
+                    </section>
+                </div>
+            </template>
         </div>
 
+        <!-- related movies section -->
         <section class="related__movies">
-
             <div class="container">
                 <h2 class="primary-text">Related Movies</h2>
                 <div class="movies__listing">
@@ -227,5 +229,4 @@
 
 </body>
 <script src="js/movie-details.js" type="module"></script>
-
 </html>

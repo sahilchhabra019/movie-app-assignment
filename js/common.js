@@ -5,7 +5,7 @@ import {
 } from './api.js';
 
 
-const image_base_url = 'https://image.tmdb.org/t/p/w500/';
+export const image_base_url = 'https://image.tmdb.org/t/p/w500/';
 
 // movie generes function 
 let movieGenres = [];
@@ -24,7 +24,7 @@ export function ratingStar(rating) {
 
 // single movie card 
 export function createCard(movieData, elemId) {
-    const template = document.getElementById("latest-movies");
+    const template = document.getElementById("movies-listing");
     const movieCard = template.content.querySelector("article");
     movieData.results.slice(0, 4).map(movieResults => {
         // console.log(movieResults);
@@ -119,6 +119,19 @@ export function addListeners(movieData, movieList) {
     for (var i = 0; i < movieCards.length; i++) {
         movieCards[i].addEventListener('click', clickFunction, false);
     }
+}
+
+export function findGetParameter(movieURL) {
+    var result = null,
+        tmpMovieURL = [];
+    window.location.search
+        .substr(1)
+        .split("&")
+        .forEach(function (item) {
+            tmpMovieURL = item.split("=");
+            if (tmpMovieURL[0] === movieURL) result = decodeURIComponent(tmpMovieURL[1]);
+        });
+    return result;
 }
 
 getMovieGenresData();

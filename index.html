@@ -7,14 +7,13 @@
     <meta name="author" content="Sahil Chhabra">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/style.css" rel="stylesheet">
-    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet"> -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900,900i&display=swap" rel="stylesheet">
     <title>Movies List App</title>
 </head>
 
 <body>
-
     <main class="movies">
+
         <header class="menu">
             <section class="container-fluid">
                 <nav class="primary__navigation">
@@ -29,7 +28,9 @@
                 </nav>
             </section>
         </header>
-        <template id="latest-movies">
+
+        <!--universal template for all movie card -->
+        <template id="movies-listing">
             <article class="movie__card">
                 <figure class="movie__image" id="modal">
                     <img src="" alt="" title="" class="movie-image">
@@ -45,7 +46,6 @@
                     </section>
                     <section class="movie__generes">
                         <ul>
-
                             <li></li>
                         </ul>
                     </section>
@@ -63,8 +63,8 @@
         <section class="latest__movies">
             <div class="container">
                 <h2 class="primary-text">Latest</h2>
-                <div class="movies__listing" id="movies__listing">
-                    
+                <div class="movies__listing" id="latest__listing">
+
                 </div>
             </div>
         </section>
@@ -75,7 +75,7 @@
             <div class="container">
                 <h2 class="primary-text">Trending</h2>
                 <div class="movies__listing" id="trending_listing">
-                    
+
                 </div>
             </div>
         </section>
@@ -85,16 +85,14 @@
             <div class="container">
                 <h2 class="primary-text">Most Watched</h2>
                 <div class="movies__listing" id="mostwatched__listing">
-                 
-
-                    
-
-                   
-
-                                    </div>
+                
+                </div>
             </div>
         </section>
     </main>
+
+
+    <!-- popup template -->
     <!-- The Modal -->
     <template id="modal-template">
         <div id="myModal" class="modal">
@@ -123,7 +121,7 @@
                                         genre
                                     </th>
                                     <td>
-                                        
+
                                     </td>
                                 </tr>
                                 <!-- <tr class="cast__data">
@@ -148,7 +146,7 @@
                                     </th>
                                     <td>
                                         <div class="movie__ratingStars">
-                                           <span></span>
+                                            <span></span>
                                         </div>
                                     </td>
                                 </tr>

@@ -3,54 +3,48 @@ import {
 } from './api.js';
 
 import {
-    ratingStar
+    ratingStar,
+    findGetParameter,
+    image_base_url
 } from './common.js';
-const image_base_url = 'https://image.tmdb.org/t/p/w500/';
 
-function findGetParameter(parameterName) {
-    var result = null,
-        tmp = [];
-    window.location.search
-        .substr(1)
-        .split("&")
-        .forEach(function (item) {
-            tmp = item.split("=");
-            if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
-        });
-    return result;
-}
-
-async function populateLatestData() {
+// single movie details function
+async function singleMovieDetails() { 
     const id = findGetParameter('id');
 
     if (id) {
         const movieDetails = await getMovieDetails(id);
-        console.log('movieDetails', movieDetails);
+        // console.log('movieDetails', movieDetails);
 
+        // get template tag content and import it
         const template = document.getElementById("details");
         const details = template.content.querySelector("div");
-
         const node = document.importNode(details, true);
+
+        // find description of movie and append api overview into html
         const description = node.querySelector('.para-text');
         description.append(document.createTextNode(movieDetails.overview))
 
+        // find title of movie and append api title into html
         const movieTitle = node.querySelector('.primary-text')
         movieTitle.append(document.createTextNode(movieDetails.original_title))
 
+        // find image of movie and append api image,img title,img alt into html
         const moviePoster = node.querySelector('.full__banner figure img');
         moviePoster.setAttribute("src", image_base_url + movieDetails.poster_path);
         moviePoster.setAttribute("alt", movieDetails.original_title);
         moviePoster.setAttribute("title", movieDetails.original_title);
 
+        // find generes of movie and append api generes into html
         let genre = '';
         movieDetails.genres.map(genreItem => genre += genreItem.name + ', ');
         const genredata = node.querySelector('.genre__data td');
         genredata.append(document.createTextNode(genre));
 
+        // find cast of movie and append api cast names into html
         let cast = '';
         movieDetails.credits.cast.slice(0, 8).map(item => cast += item.name + ', ');
         cast = cast.slice(0, -2);
-
         const castData = node.querySelector('.cast__data td');
         castData.append(document.createTextNode(cast))
 
@@ -63,4 +57,4 @@ async function populateLatestData() {
     }
 }
 
-populateLatestData();
+singleMovieDetails();

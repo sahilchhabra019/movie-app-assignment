@@ -15,7 +15,7 @@ import{
 // for latest movies section
 async function populateLatestData() {
   const movieData = await getLatestMovieDetails();
-  const movieList = document.getElementById('movies__listing');
+  const movieList = document.getElementById('latest__listing');
   createCard(movieData, movieList);
   addListeners(movieData, movieList);
 }

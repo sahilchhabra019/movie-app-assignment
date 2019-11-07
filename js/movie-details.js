@@ -1,8 +1,10 @@
 import {
-    ratingStar,
     getMovieDetails
 } from './api.js';
 
+import {
+    ratingStar
+} from './common.js';
 const image_base_url = 'https://image.tmdb.org/t/p/w500/';
 
 function findGetParameter(parameterName) {

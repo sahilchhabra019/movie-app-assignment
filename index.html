@@ -7,6 +7,7 @@
     <meta name="author" content="Sahil Chhabra">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/style.css" rel="stylesheet">
+    <!-- <link rel="import" src="templates/card.html"> -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900,900i&display=swap" rel="stylesheet">
     <title>Movies List App</title>
 </head>
@@ -64,7 +65,7 @@
             <div class="container">
                 <h2 class="primary-text">Latest</h2>
                 <div class="movies__listing" id="latest__listing">
-
+                    <div w3-include-html="/templates/card.html"></div>
                 </div>
             </div>
         </section>
@@ -85,7 +86,7 @@
             <div class="container">
                 <h2 class="primary-text">Most Watched</h2>
                 <div class="movies__listing" id="mostwatched__listing">
-                
+
                 </div>
             </div>
         </section>
@@ -157,11 +158,6 @@
             </article>
         </div>
     </template>
-
-
-
-
-    <ul id="movies"></ul>
     <script src="js/index.js" type="module"></script>
 </body>
 

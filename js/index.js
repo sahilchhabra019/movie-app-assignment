@@ -6,7 +6,7 @@ import {
   getTrendingMovieDetails,
 } from './api.js';
 
-import{
+import {
   addListeners,
   createCard,
   getMovieGenresData,

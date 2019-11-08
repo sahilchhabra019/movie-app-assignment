@@ -1,11 +1,14 @@
 import {
-    getMovieDetails
+    getMovieDetails,
+    getRelatedMovies
 } from './api.js';
 
 import {
     ratingStar,
     findGetParameter,
-    image_base_url
+    image_base_url,
+    createCard,
+    addListeners,
 } from './common.js';
 
 // single movie details function
@@ -57,4 +60,17 @@ async function singleMovieDetails() {
     }
 }
 
+
+async function populateRelatedMovies() {
+    const id = findGetParameter('id');
+    // console.log(id);
+    if(id){
+    const movieData = await getRelatedMovies();
+    const movieList = document.getElementById('related-listing');
+    createCard(movieData, movieList);
+    addListeners(movieData, movieList);
+  }
+}
+
 singleMovieDetails();
+populateRelatedMovies();

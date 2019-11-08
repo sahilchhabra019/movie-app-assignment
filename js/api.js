@@ -30,3 +30,9 @@ export const getMovieDetails = async (movieId) => {
     const movieDetailsUrl =  `${BASE_URL}/movie/${movieId}?api_key=${API_KEY}&language=en-US&append_to_response=credits`;
     return fetch(movieDetailsUrl).then(response => response.json());
 }
+
+// related movies data api
+export const getRelatedMovies = async (movieId) => {
+    const RelatedMovieUrl =  `https://api.themoviedb.org/3/movie/${movieId}/similar?api_key=${API_KEY}&language=en-US&page=1`;
+    return fetch(RelatedMovieUrl).then(response => response.json());
+}

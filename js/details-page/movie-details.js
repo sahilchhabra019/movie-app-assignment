@@ -1,23 +1,21 @@
 import {
-    getMovieDetails,
-    getRelatedMovies
+    loadApiData,
 } from './api.js';
 
 import {
     ratingStar,
-    findGetParameter,
+    getUrlParameter,
     image_base_url,
     createCard,
     addListeners,
 } from './common.js';
 
 // single movie details function
-async function singleMovieDetails() { 
-    const id = findGetParameter('id');
+async function singleMovieDetails() {
+    const id = getUrlParameter('id');
 
     if (id) {
-        const movieDetails = await getMovieDetails(id);
-        // console.log('movieDetails', movieDetails);
+        const movieDetails = await loadApiData.loadMovieDetails(id);
 
         // get template tag content and import it
         const template = document.getElementById("details");
@@ -45,11 +43,17 @@ async function singleMovieDetails() {
         genredata.append(document.createTextNode(genre));
 
         // find cast of movie and append api cast names into html
-        let cast = '';
-        movieDetails.credits.cast.slice(0, 8).map(item => cast += item.name + ', ');
-        cast = cast.slice(0, -2);
+
         const castData = node.querySelector('.cast__data td');
-        castData.append(document.createTextNode(cast))
+        movieDetails.credits.cast.slice(0, 8).map(item => {
+
+            var aTag = document.createElement('a');
+            aTag.setAttribute('href', "hello.html?id=" + item.id);
+            aTag.innerText = item.name;
+            castData.appendChild(aTag);
+
+            castData.append()
+        });
 
         //for movie rating
         let ratingMovies = Math.round((movieDetails.vote_average / 2));
@@ -60,17 +64,6 @@ async function singleMovieDetails() {
     }
 }
 
-
-async function populateRelatedMovies() {
-    const id = findGetParameter('id');
-    // console.log(id);
-    if(id){
-    const movieData = await getRelatedMovies(id);
-    const movieList = document.getElementById('related-listing');
-    createCard(movieData, movieList);
-    addListeners(movieData, movieList);
-  }
-}
-
 singleMovieDetails();
+populateActorDetails();
 populateRelatedMovies();

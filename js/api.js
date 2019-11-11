@@ -35,4 +35,7 @@ export const getMovieDetails = async (movieId) => {
 export const getRelatedMovies = async (movieId) => {
     const RelatedMovieUrl =  `${BASE_URL}/movie/${movieId}/similar?api_key=${API_KEY}&language=en-US&page=1`;
     return fetch(RelatedMovieUrl).then(response => response.json());
+
+
+    
 }

@@ -55,6 +55,30 @@ async function movieActorDetails(){
                 })
             }
         }
+
+            for(var i = 0; i < groupedFimlo.length; i++){
+                if(groupedFimlo[i].year){
+                const Movieyear = document.querySelector('.year');
+                var h2 = document.createElement('h2');
+                h2.append(document.createTextNode(groupedFimlo[i].year));
+                Movieyear.append(h2);
+                for(var j=0;j<groupedFimlo[i].films.length;j++){
+                    const movieyeardata = document.querySelector('.year');
+
+                    var article = document.createElement('article');
+                    article.setAttribute("class","data-years");
+                    movieyeardata.append(article);
+
+                    var h2 = document.createElement('h2');
+                    h2.setAttribute("class","years-text");
+                    h2.append(document.createTextNode(groupedFimlo[i].films[j].title));
+                    article.append(h2);
+
+                }
+            }
+                // h2.appendChild(Movieyear);
+            }
+
         console.log(groupedFimlo);
 
 

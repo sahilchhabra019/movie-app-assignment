@@ -42,7 +42,7 @@
                             <h2 class="secondary-text"></h2>
                         </div>
                         <div class="movie__fav--heart" id="movie__fav--heart">
-                            <span><i class="fa fa-heart" aria-hidden="true"></i></span>
+                            <span><i class="fa fa-heart" aria-hidden="true" id="fa-heart"></i></span>
                         </div>
                     </section>
                     <section class="movie__generes">
@@ -65,7 +65,7 @@
             <div class="container">
                 <h2 class="primary-text">Latest</h2>
                 <div class="movies__listing" id="latest__listing">
-                    <div w3-include-html="/templates/card.html"></div>
+                   
                 </div>
             </div>
         </section>
@@ -125,22 +125,22 @@
 
                                     </td>
                                 </tr>
-                                <!-- <tr class="cast__data">
+                                <tr class="cast__data">
                                     <th>
                                         Cast
                                     </th>
                                     <td>
                                         
                                     </td>
-                                </tr> -->
-                                <!-- <tr>
+                                </tr>
+                                <tr class="dir__data">
                                     <th>
                                         Director
                                     </th>
                                     <td>
-                                        S.S Rajmouli
+                                      
                                     </td>
-                                </tr> -->
+                                </tr>
                                 <tr>
                                     <th>
                                         Movie Rating
@@ -152,13 +152,32 @@
                                     </td>
                                 </tr>
                             </tbody>
+
                         </table>
                     </div>
                 </section>
+                <section class="modal__foot">
+                    <span class="modal__close--bottom">Close</span>
+                </section>
             </article>
+
         </div>
     </template>
+
+
     <script src="js/index.js" type="module"></script>
+    
+    <script>
+
+            // var node = document.querySelectorAll('.fa-heart')[0];
+            // console.log(node);
+            
+            // node.addEventListener("click", function redColor() {
+            //    var heart = document.getElementById("fa-heart");
+            //    heart.classList.add("red");
+            // });
+            
+            </script>
 </body>
 
 </html>

@@ -1,20 +1,26 @@
 /* this file contain all js code for home page in movie app */
 
 import {
-  getLatestMovieDetails,
-  getMostWatchedMovieDetails,
-  getTrendingMovieDetails,
-} from './api.js';
+  LoadData,
+} from './load-data/load-api-data.js';
 
-import {
-  addListeners,
+import{
   createCard,
-  getMovieGenresData,
-} from './common.js';
+} from './app-common-functions/movie-card.js'
+import {
+  loadMovieGenresData,
+} from './app-common-functions/common-functions.js';
+import {
+  addListeners
+} from './app-common-functions/card-popup.js';
+
+
+var movieDetails = new LoadData();
+
 
 // for latest movies section
 async function populateLatestData() {
-  const movieData = await getLatestMovieDetails();
+  const movieData = await movieDetails.loadLatestMovieDetails();
   const movieList = document.getElementById('latest__listing');
   createCard(movieData, movieList);
   addListeners(movieData, movieList);
@@ -22,7 +28,7 @@ async function populateLatestData() {
 
 // for trending movies section
 async function populateTrendingData() {
-  const movieData = await getTrendingMovieDetails();
+  const movieData = await movieDetails.loadTrendingMovieDetails();
   const movieList = document.getElementById('trending_listing');
   createCard(movieData, movieList);
   addListeners(movieData, movieList);
@@ -30,14 +36,16 @@ async function populateTrendingData() {
 
 // for most viewed movie section
 async function populateMostWachedData() {
-  const movieData = await getMostWatchedMovieDetails();
+  const movieData = await movieDetails.loadMostWatchedMovieDetails();
   const movieList = document.getElementById('mostwatched__listing');
   createCard(movieData, movieList);
   addListeners(movieData, movieList);
 }
 
+
 // function calling
-getMovieGenresData();
+loadMovieGenresData();
 populateLatestData();
 populateTrendingData();
 populateMostWachedData();
+

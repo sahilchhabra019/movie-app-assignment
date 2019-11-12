@@ -5,6 +5,10 @@
 body{
     font-family: 'Roboto', sans-serif;
 }
+.red{
+    color:var(--red);
+    font-size:20px;
+}
 .movies{
     padding-bottom:60px;
 }

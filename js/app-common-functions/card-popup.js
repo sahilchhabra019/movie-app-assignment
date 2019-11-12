@@ -1,12 +1,11 @@
-import{
+import {
     image_base_url,
     movieGenres,
     ratingStar,
-    getDirector,
+    getDirector
 } from './common-functions.js'
-
-import{
-    LoadData,
+import {
+    LoadData
 } from '../load-data/load-api-data.js'
 
 var singleMovie = new LoadData();
@@ -17,11 +16,10 @@ export function addListeners(movieData, movieList) {
 
     var clickFunction = async function () {
         var id = this.getAttribute("data-id");
-        // console.log(id);
         var currentMovie = movieData.results.filter(movie => id == movie.id)[0];
-        const template = document.getElementById("modal-template");
+        var cardModal = document.querySelector("#cardModal").import;
+        const template = cardModal.getElementById("modal-template");
         const modal = template.content.querySelector(".modal");
-
         const modalNode = document.importNode(modal, true);
         // POPUP CONTENT START
 
@@ -53,26 +51,21 @@ export function addListeners(movieData, movieList) {
         rating.innerHTML = ratingStar(ratingMovies);
 
         // for movie cast
-        
         let singleMovieData = await singleMovie.loadMovieDetails(currentMovie.id);
         let cast = '';
         singleMovieData.credits.cast.slice(0, 8).map(movieCast => cast += movieCast.name + ', ');
         cast = cast.slice(0, -2);
         const castMovie = modalNode.querySelector('.cast__data td')
         castMovie.appendChild(document.createTextNode(cast));
-      
-
         const directorMovie = modalNode.querySelector('.dir__data td')
         directorMovie.appendChild(document.createTextNode(getDirector(singleMovieData)));
-
-
 
         modalNode.style.display = "block";
         document.body.append(modalNode);
 
         var span = document.getElementsByClassName("modal__close")[0];
         var spanBottom = document.getElementsByClassName("modal__close--bottom")[0];
-        spanBottom.onclick = function(){
+        spanBottom.onclick = function () {
             document.querySelector('.modal').remove();
         }
         span.onclick = function () {

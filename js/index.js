@@ -1,24 +1,12 @@
 /* this file contain all js code for home page in movie app */
 
-import {
-  LoadData,
-} from './load-data/load-api-data.js';
-
-import{
-  createCard,
-} from './app-common-functions/movie-card.js'
-import {
-  loadMovieGenresData,
-} from './app-common-functions/common-functions.js';
-import {
-  addListeners
-} from './app-common-functions/card-popup.js';
-
+import {LoadData} from './load-data/load-api-data.js';
+import{createCard} from './app-common-functions/movie-card.js'
+import {loadMovieGenresData} from './app-common-functions/common-functions.js';
+import {addListeners} from './app-common-functions/card-popup.js';
 
 var movieDetails = new LoadData();
 
-
-// for latest movies section
 async function populateLatestData() {
   const movieData = await movieDetails.loadLatestMovieDetails();
   const movieList = document.getElementById('latest__listing');
@@ -41,7 +29,6 @@ async function populateMostWachedData() {
   createCard(movieData, movieList);
   addListeners(movieData, movieList);
 }
-
 
 // function calling
 loadMovieGenresData();

@@ -48,7 +48,7 @@
 
 .movie__image {
     max-width: 100%;
-    max-height: 230px;
+    max-height: 300px;
     height: 100%;
     object-fit: cover;
     overflow: hidden;
@@ -66,6 +66,7 @@
     margin-bottom: 15px;
     display: flex;
     margin-top: 10px;
+    min-height: 46px;
     flex-wrap: wrap;
     justify-content: space-around;
 }
@@ -134,30 +135,34 @@
 .modal__body{
     padding:15px;
 }
-.modal__foot{
-    display: flex;
+.modal__foot {
     width: 100%;
     flex-direction: row-reverse;
+    border-top: 1px solid #ccc;
+    text-align: right;
+    padding: 20px;
 }
 .modal__foot .modal__close--bottom {
     margin-right: 30px;
     margin-bottom: 20px;
+    border: 1px solid #ccc;
     cursor: pointer;
+    border-radius: 5px;
+    padding: 8px 15px 7px 15px;
 }
 .modal {
-    display: none; 
-    position: fixed; 
+    display: none;
+    position: fixed;
     z-index: 1;
-    padding-top: 50px; 
-    left: 0;
-    top: 0;
+    padding-top: 30px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50% , -50%);
     width: 100%;
-    height: 100%; 
-    overflow: auto; 
-    background-color: var(--dark-black); 
-    background-color: var(--opacity-black); 
-  }
-
+    height: 100%;
+    overflow: auto;
+    background-color: var( --opacity-black);
+}
   .modal__content {
     background-color:var(--creamy-white);
     margin: auto;
@@ -186,6 +191,10 @@
 
 
 /* inner movie detail page start here */
+.anchor-actor a:hover{
+    color:blue;
+}
+
 .full__banner {
     width: 100%;
     position: relative;
@@ -194,6 +203,11 @@
     width: 100%;
     height: calc(100vh - 37px);
     object-fit: cover;
+}
+.anchor-actor a {
+    text-decoration: none;
+    color: #000;
+    display: contents;
 }
 .movie__details {
     width: 100%;
@@ -244,3 +258,61 @@
     text-align: justify;
 }
 /* inner movie detail page end here */
+
+
+/* responsive css*/
+
+@media only screen and (max-width: 992px) {
+.movie__card {
+    width: 49%;
+    margin-top:20px;
+    flex-wrap: wrap;
+}
+.modal__content {
+    width: 90%;
+    overflow-y: scroll;
+    max-height: 500px;
+    overflow-x: hidden;
+}
+}
+@media only screen and (max-width: 580px) {
+    .logo {
+        font-size: 1.1em;
+        text-align: center;
+        border-bottom: 0.5px solid #ccc6;
+    }
+    .movie__desc {
+        width: 100%;
+        margin-top: 10px;
+    }
+    .menu__item {
+        text-align: center;
+        width: 100%;
+    }
+    .movie__info {
+        width: 100%;
+
+    }
+    .movie__card {
+        width: 100%;
+        margin-top:20px;
+        flex-wrap: wrap;
+    }
+    .modal__desc .movie__image {
+        width: 100%;
+        height: 300px;
+        margin-bottom: 10px;
+        overflow: hidden;
+        object-fit: cover;
+    }
+    .movie__content {
+        width: 100%;
+        margin-top: 20px;
+    }
+    .primary__navigation {
+        display: inline-block;
+    }
+    .movie__image {
+        max-height: 350px;
+    }
+    }

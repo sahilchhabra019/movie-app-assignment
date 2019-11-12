@@ -1,7 +1,7 @@
 /* all common functions which are used in movie ap project */
 
 import {
-    LoadData,
+    LoadData
 } from '../load-data/load-api-data.js';
 
 export const image_base_url = 'https://image.tmdb.org/t/p/w500/';
@@ -13,7 +13,6 @@ export let movieGenres = [];
 export async function loadMovieGenresData() {
     movieGenres = await movieDetails.loadMovieGenres();
 }
-
 // movie rating function
 export function ratingStar(rating) {
     let ratingData = ''
@@ -22,16 +21,14 @@ export function ratingStar(rating) {
     }
     return ratingData;
 }
+// get Director
+export function getDirector(singleMovieData) {
+    var directors = singleMovieData.credits.crew.filter(movieDirector => movieDirector.job === 'Director')[0];
+    console.log(directors)
+    return directors.name;
 
- export function getDirector(singleMovieData){ 
-  var directors = singleMovieData.credits.crew.filter(movieDirector => movieDirector.job === 'Director')[0];
-  console.log(directors)
-  return directors.name;
- 
- }
-
-  
-  // url
+}
+// get parameter 
 export function findGetParameter(movieURL) {
     var result = null,
         tmpMovieURL = [];

@@ -78,9 +78,10 @@ body{
         margin-left: 28px;
         display: flex;
 }
-.table th{
-    font-size:16px;
-    font-weight:bold;
-    color:var(--dark-black);
-} 
-
+.table th {
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: capitalize;
+    width: 25%;
+    color: var(--dark-black);
+}

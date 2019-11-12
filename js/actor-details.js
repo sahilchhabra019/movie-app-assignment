@@ -1,50 +1,38 @@
-
 import {
-    LoadData,
+    LoadData
 } from './load-data/load-api-data.js';
-
 import {
-    findGetParameter,
+    findGetParameter
 } from './app-common-functions/common-functions.js';
 
-
-async function movieActorDetails(){
+async function movieActorDetails() {
     const id = findGetParameter('id');
-    // console.log(id);
 
     var actorData = new LoadData();
-
     if (id) {
         const actorDetails = await actorData.loadActorDetails(id);
-        // console.log(actorDetails);
+        const template = document.getElementById("actor-details");
+        const details = template.content.querySelector("div");
+        const nodeActor = document.importNode(details, true);
 
-           // get template tag content and import it
-           const template = document.getElementById("actor-details");
-           const details = template.content.querySelector("div");
-           const nodeActor = document.importNode(details, true);
-
-           
-        // find description of movie and append api overview into html
         const description = nodeActor.querySelector('.para-actor p');
         description.append(document.createTextNode(actorDetails.biography));
 
-
         var filmo = await actorData.loadActorFilmography(id);
-        
         filmo = filmo.cast.map(item => {
             item.year = item.release_date ? parseInt(item.release_date.split('-')[0]) : '';
             return item;
         });
 
-        filmo.sort((a,b) => (a.year > b.year) ? 1 : ((b.year > a.year) ? -1 : 0));
+        filmo.sort((a, b) => (a.year > b.year) ? 1 : ((b.year > a.year) ? -1 : 0));
 
         let groupedFimlo = [];
         let years = [];
 
-        for(var i = 0; i < filmo.length; i++){
-            if(years.includes(filmo[i].year)){
+        for (var i = 0; i < filmo.length; i++) {
+            if (years.includes(filmo[i].year)) {
                 groupedFimlo.map(item => {
-                    if(item.year == filmo[i].year)  item.films.push(filmo[i]);
+                    if (item.year == filmo[i].year) item.films.push(filmo[i]);
                     else return item;
                 });
             } else {
@@ -56,40 +44,32 @@ async function movieActorDetails(){
             }
         }
 
-            for(var i = 0; i < groupedFimlo.length; i++){
-                if(groupedFimlo[i].year){
+        for (var i = 0; i < groupedFimlo.length; i++) {
+            if (groupedFimlo[i].year) {
                 const Movieyear = document.querySelector('.year');
                 var h2 = document.createElement('h2');
                 h2.append(document.createTextNode(groupedFimlo[i].year));
                 Movieyear.append(h2);
-                for(var j=0;j<groupedFimlo[i].films.length;j++){
+                for (var j = 0; j < groupedFimlo[i].films.length; j++) {
                     const movieyeardata = document.querySelector('.year');
 
                     var article = document.createElement('article');
-                    article.setAttribute("class","data-years");
+                    article.setAttribute("class", "data-years");
                     movieyeardata.append(article);
 
                     var h2 = document.createElement('h2');
-                    h2.setAttribute("class","years-text");
+                    h2.setAttribute("class", "years-text");
                     h2.append(document.createTextNode(groupedFimlo[i].films[j].title));
                     article.append(h2);
 
                 }
             }
-                // h2.appendChild(Movieyear);
-            }
+        }
 
         console.log(groupedFimlo);
-
-
         document.getElementById('actor-main-details').append(nodeActor);
 
-
-
-
-
-
     }
-    
+
 }
 movieActorDetails();

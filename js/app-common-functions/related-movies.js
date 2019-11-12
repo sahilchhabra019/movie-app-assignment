@@ -2,21 +2,14 @@ import {
     findGetParameter,
     getDirector,
 } from './common-functions.js'
-import {
-    addListeners,
-} from './card-popup.js'
-import {
-    LoadData,
-} from '../load-data/load-api-data.js'
-import {
-    createCard,
-} from './movie-card.js'
+import {addListeners} from './card-popup.js'
+import {LoadData} from '../load-data/load-api-data.js'
+import {createCard} from './movie-card.js'
 
 var relatedData = new LoadData();
 
 export async function populateRelatedMovies() {
     const id = findGetParameter('id');
-    // console.log(id);
     if (id) {
         var RelatedData = new LoadData();
         const movieData = await relatedData.loadRelatedMovies(id);

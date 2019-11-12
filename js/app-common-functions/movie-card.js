@@ -1,15 +1,12 @@
-import {
-    image_base_url,
-    movieGenres,
-    ratingStar
-} from './common-functions.js'
+import {image_base_url,movieGenres,ratingStar} from './common-functions.js'
 
 // single movie card 
 export function createCard(movieData, elemId) {
-    const template = document.getElementById("movies-listing");
+    const card = document.querySelector("#hello").import;
+
+    const template = card.querySelector("#movies-listing");
     const movieCard = template.content.querySelector("article");
     movieData.results.slice(0, 4).map(movieResults => {
-        // console.log(movieResults);
         var movieTitle = movieResults.original_title;
         const node = document.importNode(movieCard, true);
 
@@ -31,7 +28,6 @@ export function createCard(movieData, elemId) {
         finalGenres = finalGenres.slice(0, -2);
         const genres = node.querySelector('.movie__generes ul li')
         genres.appendChild(document.createTextNode(finalGenres));
-        // console.log(finalGenres);
 
         //for movie rating
         let ratingMovies = Math.round((movieResults.vote_average / 2));
@@ -41,14 +37,12 @@ export function createCard(movieData, elemId) {
         //for show more
         const showMore = node.querySelector('.movie__showMore');
         showMore.setAttribute('href', '/movie-details.html?id=' + movieResults.id);
-
         elemId.append(node);
     });
 
     var hearts = document.getElementsByClassName('movie__fav--heart');
-    
+
     for (var i = 0; i < hearts.length; i++) {
-        console.log(hearts[i]);
         hearts[i].addEventListener('click', function () {
             this.setAttribute("class", 'red movie__fav--heart');
         });

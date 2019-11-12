@@ -9,7 +9,6 @@ export class LoadData {
             console.log(error);
         })
     }
-
     // most watched movies data api
     loadMostWatchedMovieDetails = async () => {
         const mostWatched_url = `${BASE_URL}/movie/popular?api_key=${API_KEY}&language=en-US&page=1`;
@@ -17,7 +16,6 @@ export class LoadData {
             console.log(error);
         })
     }
-
     // trending movies data api
     loadTrendingMovieDetails = async () => {
         const trending_url = `${BASE_URL}/trending/movie/week?api_key=${API_KEY} `;
@@ -32,7 +30,6 @@ export class LoadData {
             console.log(error);
         })
     }
-
     // single movie details data api
     loadMovieDetails = async (movieId) => {
         const movieDetailsUrl = `${BASE_URL}/movie/${movieId}?api_key=${API_KEY}&language=en-US&append_to_response=credits`;
@@ -40,7 +37,6 @@ export class LoadData {
             console.log(error);
         })
     }
-
     // related movies data api
     loadRelatedMovies = async (movieId) => {
         const RelatedMovieUrl = `${BASE_URL}/movie/${movieId}/similar?api_key=${API_KEY}&language=en-US&page=1`;
@@ -48,7 +44,6 @@ export class LoadData {
             console.log(error);
         })
     }
-
     // actor details data api
     loadActorDetails = async function (ACTOR_ID) {
         const actorDetailsUrl = `${BASE_URL}/person/${ACTOR_ID}?api_key=${API_KEY}&language=en-US`;
@@ -57,7 +52,7 @@ export class LoadData {
         })
     }
     //actor filmography
-    loadActorFilmography = async function (ACTOR_ID){
+    loadActorFilmography = async function (ACTOR_ID) {
         const actorFilmographyUrl = `${BASE_URL}/person/${ACTOR_ID}/movie_credits?api_key=${API_KEY}&language=en-US`;
         return fetch(actorFilmographyUrl).then(response => response.json()).catch(error => {
             console.log(error);

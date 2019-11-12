@@ -1,31 +1,18 @@
-import {
-    LoadData,
-} from './load-data/load-api-data.js';
-
-import {
-    ratingStar,
-    findGetParameter,
-    image_base_url,
-    getDirector,
-} from './app-common-functions/common-functions.js';
-
-import{
-    populateRelatedMovies,
-} from './app-common-functions/related-movies.js'
-
-
+import {LoadData} from './load-data/load-api-data.js';
+import {ratingStar,findGetParameter,image_base_url,getDirector} from './app-common-functions/common-functions.js';
+import {populateRelatedMovies} from './app-common-functions/related-movies.js'
 
 // single movie details function
-async function singleMovieDetails() {  
+async function singleMovieDetails() {
     const id = findGetParameter('id');
-    
-var movieData = new LoadData();
+    var movieData = new LoadData();
 
     if (id) {
         const movieDetails = await movieData.loadMovieDetails(id);
 
         // get template tag content and import it
-        const template = document.getElementById("details");
+        const detailsMovieCard = document.querySelector("#cardModal").import;
+        const template = detailsMovieCard.getElementById("details");
         const details = template.content.querySelector("div");
         const node = document.importNode(details, true);
 
@@ -57,8 +44,6 @@ var movieData = new LoadData();
             aTag.setAttribute('href', "actor-details.html?id=" + item.id);
             aTag.innerText = item.name;
             castData.appendChild(aTag);
-
-            castData.append()
         });
         
         //for movie rating

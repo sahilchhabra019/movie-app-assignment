@@ -2,7 +2,9 @@ import {
     LoadData
 } from './load-data/load-api-data.js';
 import {
-    findGetParameter
+    findGetParameter,
+    image_base_url
+
 } from './app-common-functions/common-functions.js';
 
 async function movieActorDetails() {
@@ -11,12 +13,20 @@ async function movieActorDetails() {
     var actorData = new LoadData();
     if (id) {
         const actorDetails = await actorData.loadActorDetails(id);
+        console.log(actorDetails);
         const template = document.getElementById("actor-details");
         const details = template.content.querySelector("div");
         const nodeActor = document.importNode(details, true);
 
         const description = nodeActor.querySelector('.para-actor p');
         description.append(document.createTextNode(actorDetails.biography));
+
+         // find image of movie and append api image,img title,img alt into html
+         const actorPoster = nodeActor.querySelector('.actor_poster .actor-image img');
+         console.log(actorPoster)
+         actorPoster.setAttribute("src", image_base_url + actorDetails.profile_path);
+         actorPoster.setAttribute("alt", actorDetails.name);
+         actorPoster.setAttribute("title", actorDetails.name);
 
         var filmo = await actorData.loadActorFilmography(id);
         filmo = filmo.cast.map(item => {

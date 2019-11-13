@@ -1,33 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <p>hello sahil</p>
-    <div id="actor-main-details">
-    <template id="actor-details">
-        <div>
-    <figure>
-        <img src="" alt="" title="">
-    </figure>
-    <div class="para-actor">
-        <p></p>
-    </div>
-</div>
-</div>
-    </template>
-    <div class="year">
-        <h2></h2>
-        <!-- <div class="data-years">
-            <h2 class="year-data"></h2>
-            <p class="year-para"></p>
-        </div> -->
-    </div>
 
-    <script src="js/actor-details.js" type="module"></script>
+        <head>
+                <meta charset="UTF-8">
+                <meta name="description" content="All latest and trending movies list ">
+                <meta name="keywords" content="hollywood movies, action movies , romantic movies, movies">
+                <meta name="author" content="Sahil Chhabra">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link href="css/style.css" rel="stylesheet">
+                <link rel="import" id="hello" href="templates/card.html">
+                <link rel="import" id="cardModal" href="templates/popup.html">
+                <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900,900i&display=swap" rel="stylesheet">
+                <title>Actor</title>
+            </head>
+
+<body>
+    <main>
+        
+            <header class="menu">
+                    <section class="container-fluid">
+                        <nav class="primary__navigation">
+                            <h1 class="logo"><a href="index.html" tabindex="0" class="logo--link">Movie App</a></h1>
+                            <ul class="menu__items">
+                                <li class="menu__item"><a href="index.html" tabindex="1" class="menu--link">Home</a>
+                                </li>
+                                <li class="menu__item"><a href="JavaScript:Void(0);" tabindex="2" class="menu--link">Explore</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </section>
+                </header>
+        
+        <section id="actor-main-details" class="container">
+            <template id="actor-details">
+                <div class="actor-section">
+                    <section class="actor_poster">
+                        <figure class="actor-image">
+                            <img src="" alt="" title="">
+                        </figure>
+                    </section>
+                    <div class="para-actor">
+                        <p></p>
+                    </div>
+                </div>
+            </template>
+        </section>
+
+        <section class="container">
+                <div class="year">
+
+                    </div>
+        </section>
+       
+
+        <script src="js/actor-details.js" type="module"></script>
 </body>
+
 </html>

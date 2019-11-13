@@ -279,11 +279,49 @@
 } */
 /* responsive css*/
 
+.actor-section {
+    display: flex;
+    justify-content: space-between;
+}
+.actor_poster {
+    width: 25%;
+}
+.actor-image {
+    width: 100%;
+}
+.actor-image img {
+    width: 100%;
+    height: 20em;
+    object-fit: cover;
+}
+.para-actor{
+    width:70%;
+}
+.para-actor h2 {
+    font-size: 1.5em;
+    margin: 1em 0;
+    font-weight: 500;
+}
+.para-actor p {
+    line-height: 1.5em;
+}
+.year > h2 {
+    font-weight: bold;
+    font-size: 1.2em;
+    background: #eee;
+    display: inline-block;
+    width: 100%;
+    padding: 0.5em;
+    margin: 1em 0;
+}
 @media only screen and (max-width: 992px) {
 .movie__card {
     width: 49%;
     margin-top:20px;
     flex-wrap: wrap;
+}
+.movie__card:hover{
+box-shadow: 5px 10px #888888;
 }
 .modal__content {
     width: 90%;

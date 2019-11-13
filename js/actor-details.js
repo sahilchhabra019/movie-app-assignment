@@ -21,6 +21,9 @@ async function movieActorDetails() {
         const description = nodeActor.querySelector('.para-actor p');
         description.append(document.createTextNode(actorDetails.biography));
 
+        const nameActor = nodeActor.querySelector('.para-actor h2');
+        nameActor.append(document.createTextNode(actorDetails.name));
+
          // find image of movie and append api image,img title,img alt into html
          const actorPoster = nodeActor.querySelector('.actor_poster .actor-image img');
          console.log(actorPoster)

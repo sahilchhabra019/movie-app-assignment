@@ -11,6 +11,7 @@ async function movieActorDetails() {
     const id = findGetParameter('id');
 
     var actorData = new LoadData();
+    console.log(actorData);
     if (id) {
         const actorDetails = await actorData.loadActorDetails(id);
         console.log(actorDetails);
@@ -18,8 +19,11 @@ async function movieActorDetails() {
         const details = template.content.querySelector("div");
         const nodeActor = document.importNode(details, true);
 
-        const description = nodeActor.querySelector('.para-actor p');
+        const description = nodeActor.querySelector('.para-actor .actor__bio');
         description.append(document.createTextNode(actorDetails.biography));
+
+        const dobActor = nodeActor.querySelector('.para-actor .actor__dob');
+        dobActor.append(document.createTextNode(actorDetails.birthday));
 
         const nameActor = nodeActor.querySelector('.para-actor h2');
         nameActor.append(document.createTextNode(actorDetails.name));
@@ -60,26 +64,64 @@ async function movieActorDetails() {
         for (var i = 0; i < groupedFimlo.length; i++) {
             if (groupedFimlo[i].year) {
                 const Movieyear = document.querySelector('.year');
-                var h2 = document.createElement('h2');
-                h2.append(document.createTextNode(groupedFimlo[i].year));
-                Movieyear.append(h2);
+                
+                let article = document.createElement('article');
+                article.setAttribute("class","movie__year");
+                Movieyear.append(article);
+                
+                let yearHeading = document.createElement('h2');
+
+                let yeardiv = document.createElement('div');
+                yeardiv.setAttribute("class","year__content")
+                article.append(yeardiv);
+               
+                yeardiv.append(yearHeading);
+
+                yearHeading.append(document.createTextNode(groupedFimlo[i].year));
+                yeardiv.append(yearHeading);
+                let actorDetailsDiv = document.createElement('div');
+                actorDetailsDiv.setAttribute("class","actor__content")
+                article.append(actorDetailsDiv);
+
+                
+ 
+                
+                
+
                 for (var j = 0; j < groupedFimlo[i].films.length; j++) {
                     const movieyeardata = document.querySelector('.year');
-
-                    var article = document.createElement('article');
-                    article.setAttribute("class", "data-years");
-                    movieyeardata.append(article);
-
-                    var h2 = document.createElement('h2');
+                    var section = document.createElement('section');
+                    section.setAttribute("class", "moviesby__year");
+                    movieyeardata.append(section);
+                    article.append(section);
+                    actorDetailsDiv.append(section);
+                    var h2 = document.createElement('p');
                     h2.setAttribute("class", "years-text");
+                    h2.append(document.createTextNode('Title: '));
                     h2.append(document.createTextNode(groupedFimlo[i].films[j].title));
-                    article.append(h2);
+                    section.append(h2);
+
+                    var movieYear = document.createElement('p');
+                    movieYear.setAttribute("class", "years-text");
+                    movieYear.append(document.createTextNode('Year: '));
+                    movieYear.append(document.createTextNode(groupedFimlo[i].films[j].year));
+                    section.append(movieYear);
+
+                    var movieChar = document.createElement('p');
+                    movieChar.setAttribute("class", "years-text");
+                    movieChar.append(document.createTextNode('Character: '));
+                    movieChar.append(document.createTextNode(groupedFimlo[i].films[j].character));
+                    section.append(movieChar);
+
+
+                   
+                    
 
                 }
             }
         }
 
-        console.log(groupedFimlo);
+       
         document.getElementById('actor-main-details').append(nodeActor);
 
     }

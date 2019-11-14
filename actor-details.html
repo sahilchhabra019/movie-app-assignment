@@ -1,58 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 
-        <head>
-                <meta charset="UTF-8">
-                <meta name="description" content="All latest and trending movies list ">
-                <meta name="keywords" content="hollywood movies, action movies , romantic movies, movies">
-                <meta name="author" content="Sahil Chhabra">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <link href="css/style.css" rel="stylesheet">
-                <link rel="import" id="hello" href="templates/card.html">
-                <link rel="import" id="cardModal" href="templates/popup.html">
-                <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900,900i&display=swap" rel="stylesheet">
-                <title>Actor</title>
-            </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="All latest and trending movies list ">
+    <meta name="keywords" content="hollywood movies, action movies , romantic movies, movies">
+    <meta name="author" content="Sahil Chhabra">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="import" id="hello" href="templates/card.html">
+    <link rel="import" id="cardModal" href="templates/popup.html">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900,900i&display=swap" rel="stylesheet">
+    <title>Actor</title>
+</head>
 
 <body>
     <main>
-        
-            <header class="menu">
-                    <section class="container-fluid">
-                        <nav class="primary__navigation">
-                            <h1 class="logo"><a href="index.html" tabindex="0" class="logo--link">Movie App</a></h1>
-                            <ul class="menu__items">
-                                <li class="menu__item"><a href="index.html" tabindex="1" class="menu--link">Home</a>
-                                </li>
-                                <li class="menu__item"><a href="JavaScript:Void(0);" tabindex="2" class="menu--link">Explore</a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </section>
-                </header>
-        
-        <section id="actor-main-details" class="container">
-            <template id="actor-details">
-                <div class="actor-section">
-                    <section class="actor_poster">
-                        <figure class="actor-image">
-                            <img src="" alt="" title="">
-                        </figure>
-                    </section>
-                    <div class="para-actor">
-                        <h2></h2>
-                        <p></p>
+
+        <header class="menu">
+            <section class="container-fluid">
+                <nav class="primary__navigation">
+                    <h1 class="logo"><a href="index.html" tabindex="0" class="logo--link">Movie App</a></h1>
+                    <ul class="menu__items">
+                        <li class="menu__item"><a href="index.html" tabindex="1" class="menu--link">Home</a>
+                        </li>
+                        <li class="menu__item"><a href="JavaScript:Void(0);" tabindex="2" class="menu--link">Explore</a>
+                        </li>
+                    </ul>
+                </nav>
+            </section>
+        </header>
+
+        <section id="actor-main-details">
+            
+                <template id="actor-details">
+                        <div class="container">
+                    <div class="actor-section">
+                        <section class="actor_poster">
+                            <figure class="actor-image">
+                                <img src="" alt="" title="">
+                            </figure>
+                        </section>
+                        <div class="para-actor">
+                            <h2 class="primary-text"></h2>
+                            <p class="actor__dob">Date of birth: </p>
+                            <p class="actor__bio"></p>
+                        </div>
                     </div>
                 </div>
-            </template>
+                </template>
+           
         </section>
 
-        <section class="container">
-                <div class="year">
+        <section class="actor">
+            <div class="container year">
+                <h2 class="year__primarytext">Filmography</h2>
 
-                    </div>
+
+            </div>
         </section>
-       
+</main>
 
         <script src="js/actor-details.js" type="module"></script>
 </body>

@@ -4,33 +4,37 @@ import {LoadData} from './load-data/load-api-data.js';
 import{createCard} from './app-common-functions/movie-card.js'
 import {loadMovieGenresData} from './app-common-functions/common-functions.js';
 import {addListeners} from './app-common-functions/card-popup.js';
+import {header} from './app-common-functions/header.js';
 
 var movieDetails = new LoadData();
-
 async function populateLatestData() {
   const movieData = await movieDetails.loadLatestMovieDetails();
-  const movieList = document.getElementById('latest__listing');
-  createCard(movieData, movieList);
-  addListeners(movieData, movieList);
+  localStorage.setItem('latestDatalocal', JSON.stringify(movieData));
+   const movielatestList = document.getElementById('latest__listing');
+  createCard(movieData.results.slice(0, 4), movielatestList);
+  addListeners(movieData, movielatestList);
 }
 
 // for trending movies section
 async function populateTrendingData() {
-  const movieData = await movieDetails.loadTrendingMovieDetails();
-  const movieList = document.getElementById('trending_listing');
-  createCard(movieData, movieList);
-  addListeners(movieData, movieList);
+  const movieDataTrending = await movieDetails.loadTrendingMovieDetails();
+  localStorage.setItem('trendingDatalocal', JSON.stringify(movieDataTrending));
+  const movieTrendingList = document.getElementById('trending_listing');
+  createCard(movieDataTrending.results.slice(0, 4), movieTrendingList);
+  addListeners(movieDataTrending, movieTrendingList);
 }
 
 // for most viewed movie section
 async function populateMostWachedData() {
-  const movieData = await movieDetails.loadMostWatchedMovieDetails();
-  const movieList = document.getElementById('mostwatched__listing');
-  createCard(movieData, movieList);
-  addListeners(movieData, movieList);
+  const moviePopularData = await movieDetails.loadMostWatchedMovieDetails();
+  localStorage.setItem('popularDatalocal', JSON.stringify(moviePopularData));
+  const moviepopularList = document.getElementById('mostwatched__listing');
+  createCard(moviePopularData.results.slice(0, 4), moviepopularList);
+  addListeners(moviePopularData, moviepopularList);
 }
 
 // function calling
+header();
 loadMovieGenresData();
 populateLatestData();
 populateTrendingData();

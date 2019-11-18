@@ -12,12 +12,13 @@ var movieDetails = new LoadData();
 export let movieGenres = [];
 export async function loadMovieGenresData() {
     movieGenres = await movieDetails.loadMovieGenres();
+    localStorage.setItem('movieGenres', JSON.stringify(movieGenres));
 }
 // movie rating function
 export function ratingStar(rating) {
     let ratingData = ''
     for (let i = 0; i <= 4; i++) {
-        ratingData = `${ratingData} <i class= "fa ${rating >= i ?'fa-star' : 'fa-star-o'}"></i>`
+        ratingData = `${ratingData} <i class= "fa ${rating >= i+1 ?'fa-star' : 'fa-star-o'}"></i>`
     }
     return ratingData;
 }

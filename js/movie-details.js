@@ -1,6 +1,7 @@
 import {LoadData} from './load-data/load-api-data.js';
 import {ratingStar,findGetParameter,image_base_url,getDirector} from './app-common-functions/common-functions.js';
 import {populateRelatedMovies} from './app-common-functions/related-movies.js'
+import {header} from './app-common-functions/header.js'
 
 // single movie details function
 async function singleMovieDetails() {
@@ -59,5 +60,6 @@ async function singleMovieDetails() {
         document.getElementById('main-details').append(node);
     }
 }
+header();
 singleMovieDetails();
 populateRelatedMovies();

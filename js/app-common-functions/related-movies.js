@@ -14,7 +14,7 @@ export async function populateRelatedMovies() {
         var RelatedData = new LoadData();
         const movieData = await relatedData.loadRelatedMovies(id);
         const movieList = document.getElementById('related-listing');
-        createCard(movieData, movieList);
+        createCard(movieData.results.slice(0,4), movieList);
         addListeners(movieData, movieList);
     }
 }

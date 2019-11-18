@@ -3,9 +3,13 @@ import {
 } from './load-data/load-api-data.js';
 import {
     findGetParameter,
-    image_base_url
+    image_base_url,
 
 } from './app-common-functions/common-functions.js';
+import {
+header,
+
+} from './app-common-functions/header.js';
 
 async function movieActorDetails() {
     const id = findGetParameter('id');
@@ -127,4 +131,5 @@ async function movieActorDetails() {
     }
 
 }
+header();
 movieActorDetails();

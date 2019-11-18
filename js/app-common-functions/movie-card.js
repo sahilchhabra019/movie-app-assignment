@@ -1,13 +1,17 @@
-import {image_base_url,movieGenres,ratingStar} from './common-functions.js'
+import {image_base_url,ratingStar} from './common-functions.js'
 
+var movieGenres = localStorage.getItem('movieGenres');
+movieGenres = JSON.parse(movieGenres);
+console.log(movieGenres);
 // single movie card 
 export function createCard(movieData, elemId) {
+    elemId.innerHTML = '';
     const card = document.querySelector("#hello").import;
 
     const template = card.querySelector("#movies-listing");
     const movieCard = template.content.querySelector("article");
-    movieData.results.slice(0, 4).map(movieResults => {
-        var movieTitle = movieResults.original_title;
+    movieData.map(movieResults => {
+        var movieTitle = movieResults.title;
         const node = document.importNode(movieCard, true);
 
         // for movie image
@@ -21,7 +25,7 @@ export function createCard(movieData, elemId) {
         const title = node.querySelector('.movie__title h2');
         title.appendChild(document.createTextNode(movieTitle));
 
-        //for movie generes
+        // for movie generes
         const currentGenres = movieGenres.genres.filter(genre => movieResults.genre_ids.includes(genre.id))
         let finalGenres = '';
         currentGenres.map(item => finalGenres += item.name + ', ');
@@ -29,7 +33,7 @@ export function createCard(movieData, elemId) {
         const genres = node.querySelector('.movie__generes ul li')
         genres.appendChild(document.createTextNode(finalGenres));
 
-        //for movie rating
+        // for movie rating
         let ratingMovies = Math.round((movieResults.vote_average / 2));
         const rating = node.querySelector('.movie__ratingStars span')
         rating.innerHTML = ratingStar(ratingMovies);
@@ -47,4 +51,5 @@ export function createCard(movieData, elemId) {
             this.setAttribute("class", 'red movie__fav--heart');
         });
     }
+    if(!movieData.length) elemId.innerHTML =  `<p class="datanot__found">No Movie Found!!</p>`;
 }

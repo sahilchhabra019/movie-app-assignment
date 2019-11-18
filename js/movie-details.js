@@ -1,7 +1,18 @@
-import {LoadData} from './load-data/load-api-data.js';
-import {ratingStar,findGetParameter,image_base_url,getDirector} from './app-common-functions/common-functions.js';
-import {populateRelatedMovies} from './app-common-functions/related-movies.js'
-import {header} from './app-common-functions/header.js'
+import {
+    LoadData
+} from './load-data/load-api-data.js';
+import {
+    ratingStar,
+    findGetParameter,
+    image_base_url,
+    getDirector
+} from './app-common-functions/common-functions.js';
+import {
+    populateRelatedMovies
+} from './app-common-functions/related-movies.js'
+import {
+    header
+} from './app-common-functions/header.js'
 
 // single movie details function
 async function singleMovieDetails() {
@@ -12,7 +23,7 @@ async function singleMovieDetails() {
         const movieDetails = await movieData.loadMovieDetails(id);
 
         // get template tag content and import it
-        const detailsMovieCard = document.querySelector("#cardModal").import;
+        const detailsMovieCard = document.querySelector("#movieDetails").import;
         const template = detailsMovieCard.getElementById("details");
         const details = template.content.querySelector("div");
         const node = document.importNode(details, true);
@@ -46,7 +57,7 @@ async function singleMovieDetails() {
             aTag.innerText = item.name;
             castData.appendChild(aTag);
         });
-        
+
         //for movie rating
         let ratingMovies = Math.round((movieDetails.vote_average / 2));
         const rating = node.querySelector('.movie__ratingStars span')

@@ -7,7 +7,7 @@ import {
 
 } from './app-common-functions/common-functions.js';
 import {
-header,
+    header,
 
 } from './app-common-functions/header.js';
 
@@ -32,12 +32,12 @@ async function movieActorDetails() {
         const nameActor = nodeActor.querySelector('.para-actor h2');
         nameActor.append(document.createTextNode(actorDetails.name));
 
-         // find image of movie and append api image,img title,img alt into html
-         const actorPoster = nodeActor.querySelector('.actor_poster .actor-image img');
-         console.log(actorPoster)
-         actorPoster.setAttribute("src", image_base_url + actorDetails.profile_path);
-         actorPoster.setAttribute("alt", actorDetails.name);
-         actorPoster.setAttribute("title", actorDetails.name);
+        // find image of movie and append api image,img title,img alt into html
+        const actorPoster = nodeActor.querySelector('.actor_poster .actor-image img');
+        console.log(actorPoster)
+        actorPoster.setAttribute("src", image_base_url + actorDetails.profile_path);
+        actorPoster.setAttribute("alt", actorDetails.name);
+        actorPoster.setAttribute("title", actorDetails.name);
 
         var filmo = await actorData.loadActorFilmography(id);
         filmo = filmo.cast.map(item => {
@@ -68,29 +68,29 @@ async function movieActorDetails() {
         for (var i = 0; i < groupedFimlo.length; i++) {
             if (groupedFimlo[i].year) {
                 const Movieyear = document.querySelector('.year');
-                
+
                 let article = document.createElement('article');
-                article.setAttribute("class","movie__year");
+                article.setAttribute("class", "movie__year");
                 Movieyear.append(article);
-                
+
                 let yearHeading = document.createElement('h2');
 
                 let yeardiv = document.createElement('div');
-                yeardiv.setAttribute("class","year__content")
+                yeardiv.setAttribute("class", "year__content")
                 article.append(yeardiv);
-               
+
                 yeardiv.append(yearHeading);
 
                 yearHeading.append(document.createTextNode(groupedFimlo[i].year));
                 yeardiv.append(yearHeading);
                 let actorDetailsDiv = document.createElement('div');
-                actorDetailsDiv.setAttribute("class","actor__content")
+                actorDetailsDiv.setAttribute("class", "actor__content")
                 article.append(actorDetailsDiv);
 
-                
- 
-                
-                
+
+
+
+
 
                 for (var j = 0; j < groupedFimlo[i].films.length; j++) {
                     const movieyeardata = document.querySelector('.year');
@@ -118,14 +118,14 @@ async function movieActorDetails() {
                     section.append(movieChar);
 
 
-                   
-                    
+
+
 
                 }
             }
         }
 
-       
+
         document.getElementById('actor-main-details').append(nodeActor);
 
     }

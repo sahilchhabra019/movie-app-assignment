@@ -1,4 +1,7 @@
-import {image_base_url,ratingStar} from './common-functions.js'
+import {
+    image_base_url,
+    ratingStar
+} from './common-functions.js'
 
 var movieGenres = localStorage.getItem('movieGenres');
 movieGenres = JSON.parse(movieGenres);
@@ -6,7 +9,7 @@ console.log(movieGenres);
 // single movie card 
 export function createCard(movieData, elemId) {
     elemId.innerHTML = '';
-    const card = document.querySelector("#hello").import;
+    const card = document.querySelector("#card").import;
 
     const template = card.querySelector("#movies-listing");
     const movieCard = template.content.querySelector("article");
@@ -51,5 +54,5 @@ export function createCard(movieData, elemId) {
             this.setAttribute("class", 'red movie__fav--heart');
         });
     }
-    if(!movieData.length) elemId.innerHTML =  `<p class="datanot__found">No Movie Found!!</p>`;
+    if (!movieData.length) elemId.innerHTML = `<p class="datanot__found">No Movie Found!!</p>`;
 }

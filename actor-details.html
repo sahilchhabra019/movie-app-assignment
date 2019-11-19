@@ -7,20 +7,20 @@
     <meta name="keywords" content="hollywood movies, action movies , romantic movies, movies">
     <meta name="author" content="Sahil Chhabra">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/main.css" rel="stylesheet">
+    <link href="assets/css/main.css" rel="stylesheet">
     <link rel="import" id="primary-header" href="templates/header.html">
-    <link rel="import" id="hello" href="templates/card.html">
     <link rel="import" id="cardModal" href="templates/popup.html">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900,900i&display=swap" rel="stylesheet">
     <title>Actor</title>
 </head>
-
 <body>
-    <main>
-        <section class="movieapp__header">
+    <main class="movies">
 
+        <!--header-->
+        <section class="movieapp__header">
         </section>
 
+        <!--actor photo and detials-->
         <section id="actor-main-details">
             <template id="actor-details">
                 <div class="container">
@@ -38,18 +38,15 @@
                     </div>
                 </div>
             </template>
-
         </section>
 
+        <!--actor filmography-->
         <section class="actor">
             <div class="container year">
                 <h2 class="year__primarytext">Filmography</h2>
-
-
             </div>
         </section>
     </main>
-    <script src="js/actor-details.js" type="module"></script>
 </body>
-
+<script src="assets/js/actor-details.js" type="module"></script>
 </html>

@@ -6,7 +6,7 @@ import {
     findGetParameter,
     image_base_url,
     getDirector
-} from './app-common-functions/common-functions.js';
+} from './app-common-functions/utilities.js';
 import {
     populateRelatedMovies
 } from './app-common-functions/related-movies.js'

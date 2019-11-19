@@ -1,27 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="All latest and trending movies list ">
     <meta name="keywords" content="hollywood movies, action movies , romantic movies, movies">
     <meta name="author" content="Sahil Chhabra">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/main.css" rel="stylesheet">
+    <link href="assets/css/main.css" rel="stylesheet">
     <link rel="import" id="primary-header" href="templates/header.html">
     <link rel="import" id="card" href="templates/card.html">
     <link rel="import" id="cardModal" href="templates/popup.html">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900,900i&display=swap" rel="stylesheet">
-    <title>Search</title>
+    <title>Search Movies</title>
 </head>
 
 <body>
-    <main>
+    <main class="movies">
+        <!--header-->
         <section class="movieapp__header">
-
         </section>
 
-
+        <!--search and filter-->
         <section class="movie__filters">
             <div class="container">
                 <article class="movie__search">
@@ -49,6 +48,7 @@
             </div>
         </section>
 
+        <!--movie listing-->
         <section class="filtered__data">
             <div class="container">
                 <div class="movies__listing" id="listing">
@@ -56,13 +56,7 @@
                 </div>
             </div>
         </section>
-
-
     </main>
-
-
-    <script src="js/data-search.js" type="module"></script>
-
 </body>
-
+<script src="assets/js/explore.js" type="module"></script>
 </html>

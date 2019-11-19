@@ -5,20 +5,20 @@ import {
     findGetParameter,
     image_base_url,
 
-} from './app-common-functions/common-functions.js';
+} from './app-common-functions/utilities.js';
 import {
     header,
-
 } from './app-common-functions/header.js';
 
 async function movieActorDetails() {
     const id = findGetParameter('id');
 
     var actorData = new LoadData();
-    console.log(actorData);
+
     if (id) {
         const actorDetails = await actorData.loadActorDetails(id);
-        console.log(actorDetails);
+
+        // for movie actor detials
         const template = document.getElementById("actor-details");
         const details = template.content.querySelector("div");
         const nodeActor = document.importNode(details, true);
@@ -31,25 +31,28 @@ async function movieActorDetails() {
 
         const nameActor = nodeActor.querySelector('.para-actor h2');
         nameActor.append(document.createTextNode(actorDetails.name));
-
-        // find image of movie and append api image,img title,img alt into html
+ 
         const actorPoster = nodeActor.querySelector('.actor_poster .actor-image img');
         console.log(actorPoster)
         actorPoster.setAttribute("src", image_base_url + actorDetails.profile_path);
         actorPoster.setAttribute("alt", actorDetails.name);
         actorPoster.setAttribute("title", actorDetails.name);
 
+
+        // get all years
         var filmo = await actorData.loadActorFilmography(id);
         filmo = filmo.cast.map(item => {
             item.year = item.release_date ? parseInt(item.release_date.split('-')[0]) : '';
             return item;
         });
 
+        //sort year
         filmo.sort((a, b) => (a.year > b.year) ? 1 : ((b.year > a.year) ? -1 : 0));
 
         let groupedFimlo = [];
         let years = [];
 
+        // create new updated array
         for (var i = 0; i < filmo.length; i++) {
             if (years.includes(filmo[i].year)) {
                 groupedFimlo.map(item => {
@@ -65,6 +68,7 @@ async function movieActorDetails() {
             }
         }
 
+        // create html for actor filmography
         for (var i = 0; i < groupedFimlo.length; i++) {
             if (groupedFimlo[i].year) {
                 const Movieyear = document.querySelector('.year');
@@ -74,23 +78,16 @@ async function movieActorDetails() {
                 Movieyear.append(article);
 
                 let yearHeading = document.createElement('h2');
-
                 let yeardiv = document.createElement('div');
                 yeardiv.setAttribute("class", "year__content")
                 article.append(yeardiv);
-
                 yeardiv.append(yearHeading);
-
+                
                 yearHeading.append(document.createTextNode(groupedFimlo[i].year));
                 yeardiv.append(yearHeading);
                 let actorDetailsDiv = document.createElement('div');
                 actorDetailsDiv.setAttribute("class", "actor__content")
                 article.append(actorDetailsDiv);
-
-
-
-
-
 
                 for (var j = 0; j < groupedFimlo[i].films.length; j++) {
                     const movieyeardata = document.querySelector('.year');
@@ -116,20 +113,12 @@ async function movieActorDetails() {
                     movieChar.append(document.createTextNode('Character: '));
                     movieChar.append(document.createTextNode(groupedFimlo[i].films[j].character));
                     section.append(movieChar);
-
-
-
-
-
                 }
             }
         }
-
-
         document.getElementById('actor-main-details').append(nodeActor);
 
     }
-
 }
 header();
 movieActorDetails();

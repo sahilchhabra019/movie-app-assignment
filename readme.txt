@@ -48,3 +48,4 @@ Files:  card.html => it contain html structure for card which is used in whole a
         movies-details.html => it contain template of details of movie.
         popup.html => it contain html structure of popup that are used in app.
     
+

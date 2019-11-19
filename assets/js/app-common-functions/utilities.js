@@ -3,7 +3,6 @@
 import {
     LoadData
 } from '../load-data/load-api-data.js';
-
 export const image_base_url = 'https://image.tmdb.org/t/p/w500/';
 
 var movieDetails = new LoadData();
@@ -14,6 +13,7 @@ export async function loadMovieGenresData() {
     movieGenres = await movieDetails.loadMovieGenres();
     localStorage.setItem('movieGenres', JSON.stringify(movieGenres));
 }
+
 // movie rating function
 export function ratingStar(rating) {
     let ratingData = ''
@@ -22,12 +22,14 @@ export function ratingStar(rating) {
     }
     return ratingData;
 }
+
 // get Director
 export function getDirector(singleMovieData) {
     var directors = singleMovieData.credits.crew.filter(movieDirector => movieDirector.job === 'Director')[0];
     console.log(directors)
     return directors.name;
 }
+
 // get parameter 
 export function findGetParameter(movieURL) {
     var result = null,
@@ -41,4 +43,5 @@ export function findGetParameter(movieURL) {
         });
     return result;
 }
+
 loadMovieGenresData();

@@ -8,7 +8,7 @@ import {
 } from './app-common-functions/movie-card.js'
 import {
   loadMovieGenresData
-} from './app-common-functions/common-functions.js';
+} from './app-common-functions/utilities.js';
 import {
   addListeners
 } from './app-common-functions/card-popup.js';

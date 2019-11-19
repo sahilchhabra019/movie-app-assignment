@@ -220,7 +220,7 @@
 
 /* inner movie detail page start here */
 .anchor-actor a:hover {
-    color: blue;
+    color: var(--blue);
 }
 
 .full__banner {
@@ -236,7 +236,7 @@
 
 .anchor-actor a {
     text-decoration: none;
-    color: #000;
+    color:var(--dark-black);
     display: contents;
 }
 
@@ -260,7 +260,7 @@
 
 .movie__info {
     width: 47.5%;
-    background: #cccccc38;
+    background:var(--info-background-color );
     padding: 25px 15px 25px 15px;
 }
 
@@ -440,13 +440,13 @@
 
 .serch__icon {
     padding: 10px 16px 10px 16px;
-    background: #2196f3;
-    border: 1px solid #2196f3;
+    background: var(--blue);
+    border: 1px solid var(--blue);
     margin-left: -2px;
 }
 
 .serch__icon i {
-    color: #fff;
+    color:var(--white);
 }
 
 .filterby___rating input[type=range] {
@@ -455,7 +455,7 @@
     height: 9px;
     margin-top: 20px;
     border: 1px solid #000;
-    background: #ccc;
+    background: var(--text-grey);
     outline: none;
     opacity: 0.7;
     -webkit-transition: .2s;
@@ -473,14 +473,14 @@
     height: 0;
     border-left: 15px solid transparent;
     border-right: 15px solid transparent;
-    border-top: 30px solid #555;
+    border-top: 30px solid var(--blue);
     cursor: pointer;
 }
 
 .filterby___rating input[type=range]::-moz-range-thumb {
     width: 25px;
     height: 25px;
-    background: #555;
+    background: var(--text-grey);
     cursor: pointer;
 }
 
@@ -493,23 +493,21 @@
 .filtered__data {
     display: flex;
 }
-
 .datanot__found {
     margin: 0 auto;
-    transform: translate(50%);
-    padding-bottom: 30px;
+    width: 100%;
+    text-align: center;
 }
-
 .datanot__found:before {
     font-family: FontAwesome;
     content: "\f119";
     height: 0px;
+    top: 50%;
     left: 50%;
     font-weight: 400;
     width: auto;
-    color: #a9a6a6fa;
+    color: var(--text-grey);
     font-size: 67px;
-    bottom: 25px;
     position: absolute;
     transform: translate(-50%);
 }

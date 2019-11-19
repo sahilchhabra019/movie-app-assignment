@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="All latest and trending movies list ">
@@ -10,20 +9,17 @@
     <link rel="import" id="cardModal" href="templates/popup.html">
     <link rel="import" id="card" href="templates/card.html">
     <link rel="import" id="movieDetails" href="templates/movie-details.html">
-    <link href="css/main.css" rel="stylesheet">
+    <link href="assets/css/main.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900,900i&display=swap" rel="stylesheet">
-    <title>Movies Detail Page</title>
+    <title>Movies Detail</title>
 </head>
 
 <body>
     <main class="movies">
+        <!--header-->
+        <section class="movieapp__header"></section>
 
-        <section class="movieapp__header">
-
-        </section>
-
-
-        <!-- Universal template for single movie description -->
+        <!--single movie description -->
         <div id="main-details"></div>
 
         <!-- related movies section -->
@@ -35,7 +31,7 @@
                 </div>
             </div>
         </section>
+    </main>
 </body>
-<script src="js/movie-details.js" type="module"></script>
-
+<script src="assets/js/movie-details.js" type="module"></script>
 </html>

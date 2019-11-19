@@ -15,6 +15,8 @@ var parsedObjectTrending = JSON.parse(trendingDataFrom);
 var popularDataFrom = localStorage.getItem('popularDatalocal');
 var parsedObjectPopular = JSON.parse(popularDataFrom);
 
+
+
 var allData = parsedObjectlLastest.results.concat(parsedObjectTrending.results, parsedObjectPopular.results);
 
 var uniqueData = [];
@@ -23,7 +25,7 @@ allData.forEach(function (item) {
   if (i <= -1) {
     uniqueData.push(item);
   }
-
+console.log(uniqueData);
 });
 
 var range1 = document.getElementById('rangeslider');
@@ -41,7 +43,6 @@ range1.addEventListener("change", event => {
 
 //for search
 var searchInput = document.getElementById('search');
-
 function getMovieSearchData(searchValue = '') {
   let searchResult = uniqueData.filter(item => {
     return item.title.toLowerCase().includes(searchValue.toLowerCase());

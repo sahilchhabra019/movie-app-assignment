@@ -3,7 +3,8 @@ import {
     movieGenres,
     ratingStar,
     getDirector
-} from './common-functions.js'
+} from './utilities.js'
+
 import {
     LoadData
 } from '../load-data/load-api-data.js'
